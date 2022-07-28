@@ -7,18 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783DF99D28859AC1000DDB2E /* SonarrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DF99C28859AC1000DDB2E /* SonarrViewModel.swift */; };
+		783DF99F2886C8A0000DDB2E /* SynologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DF99E2886C8A0000DDB2E /* SynologyViewModel.swift */; };
+		783DF9A12886C9B7000DDB2E /* SynologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DF9A02886C9B7000DDB2E /* SynologyModel.swift */; };
+		783DF9A32892C973000DDB2E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DF9A22892C973000DDB2E /* Toast.swift */; };
 		7846174C287C38BE00EF5D74 /* MediarrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846174B287C38BE00EF5D74 /* MediarrApp.swift */; };
-		7846174E287C38BE00EF5D74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846174D287C38BE00EF5D74 /* ContentView.swift */; };
+		7846174E287C38BE00EF5D74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846174D287C38BE00EF5D74 /* HomeView.swift */; };
 		78461750287C38C000EF5D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7846174F287C38C000EF5D74 /* Assets.xcassets */; };
 		78461753287C38C000EF5D74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78461752287C38C000EF5D74 /* Preview Assets.xcassets */; };
+		78461763287C598A00EF5D74 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461762287C598A00EF5D74 /* Settings.swift */; };
+		78461766287C59C600EF5D74 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461765287C59C600EF5D74 /* SecureInputView.swift */; };
+		78461768287C59F900EF5D74 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461767287C59F900EF5D74 /* SettingsStore.swift */; };
+		78461777287C5F2D00EF5D74 /* AddNewShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846176B287C5F2C00EF5D74 /* AddNewShow.swift */; };
+		78461778287C5F2D00EF5D74 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846176C287C5F2C00EF5D74 /* ShowView.swift */; };
+		78461779287C5F2D00EF5D74 /* SonarrTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846176D287C5F2C00EF5D74 /* SonarrTabBar.swift */; };
+		7846177A287C5F2D00EF5D74 /* SonarrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846176E287C5F2C00EF5D74 /* SonarrView.swift */; };
+		7846177B287C5F2D00EF5D74 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846176F287C5F2C00EF5D74 /* MovieView.swift */; };
+		7846177D287C5F2D00EF5D74 /* AddNewShowDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461771287C5F2C00EF5D74 /* AddNewShowDetailed.swift */; };
+		7846177F287C5F2D00EF5D74 /* DetailedShowHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461773287C5F2C00EF5D74 /* DetailedShowHomeView.swift */; };
+		78461781287C5F2D00EF5D74 /* DetailedShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461775287C5F2C00EF5D74 /* DetailedShowView.swift */; };
+		78461782287C5F2D00EF5D74 /* ShowDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461776287C5F2C00EF5D74 /* ShowDetails.swift */; };
+		7846178B287C5F8100EF5D74 /* RadarrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461785287C5F8100EF5D74 /* RadarrModel.swift */; };
+		7846178C287C5F8100EF5D74 /* NZBGetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461786287C5F8100EF5D74 /* NZBGetModel.swift */; };
+		7846178E287C5F8100EF5D74 /* SonarrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461788287C5F8100EF5D74 /* SonarrModel.swift */; };
+		78461792287C5FF800EF5D74 /* SonarrFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461790287C5FF800EF5D74 /* SonarrFunctions.swift */; };
+		78461793287C5FF800EF5D74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461791287C5FF800EF5D74 /* Extensions.swift */; };
+		78461799287C60C100EF5D74 /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */; };
+		7846179A287C60C100EF5D74 /* FilterModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461796287C60C100EF5D74 /* FilterModeViewModel.swift */; };
+		7846179B287C60C100EF5D74 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461797287C60C100EF5D74 /* SideMenuViewModel.swift */; };
+		7846179C287C60C100EF5D74 /* sortModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461798287C60C100EF5D74 /* sortModeViewModel.swift */; };
+		784617A2287C618C00EF5D74 /* RefreshableScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846179D287C618B00EF5D74 /* RefreshableScroll.swift */; };
+		784617A5287C618C00EF5D74 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617A0287C618C00EF5D74 /* LoadingAnimation.swift */; };
+		784617A6287C618C00EF5D74 /* ItemNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617A1287C618C00EF5D74 /* ItemNavigationView.swift */; };
+		784617AD287DAF8200EF5D74 /* SonarrHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617AC287DAF8200EF5D74 /* SonarrHomeView.swift */; };
+		784617B0287EFBC800EF5D74 /* NextAiringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617AF287EFBC800EF5D74 /* NextAiringView.swift */; };
+		784617B2287FCF9500EF5D74 /* NextAiringItemNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617B1287FCF9500EF5D74 /* NextAiringItemNavigationView.swift */; };
+		787362D72880569400ACA30C /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787362D62880569400ACA30C /* Global Functions.swift */; };
+		787362D9288067D400ACA30C /* MissingSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787362D8288067D400ACA30C /* MissingSeriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		783DF99C28859AC1000DDB2E /* SonarrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarrViewModel.swift; sourceTree = "<group>"; };
+		783DF99E2886C8A0000DDB2E /* SynologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynologyViewModel.swift; sourceTree = "<group>"; };
+		783DF9A02886C9B7000DDB2E /* SynologyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynologyModel.swift; sourceTree = "<group>"; };
+		783DF9A22892C973000DDB2E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		78461748287C38BE00EF5D74 /* Mediarr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mediarr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7846174B287C38BE00EF5D74 /* MediarrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediarrApp.swift; sourceTree = "<group>"; };
-		7846174D287C38BE00EF5D74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7846174D287C38BE00EF5D74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7846174F287C38C000EF5D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78461752287C38C000EF5D74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78461762287C598A00EF5D74 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		78461765287C59C600EF5D74 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		78461767287C59F900EF5D74 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		7846176B287C5F2C00EF5D74 /* AddNewShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewShow.swift; sourceTree = "<group>"; };
+		7846176C287C5F2C00EF5D74 /* ShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		7846176D287C5F2C00EF5D74 /* SonarrTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonarrTabBar.swift; sourceTree = "<group>"; };
+		7846176E287C5F2C00EF5D74 /* SonarrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonarrView.swift; sourceTree = "<group>"; };
+		7846176F287C5F2C00EF5D74 /* MovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		78461771287C5F2C00EF5D74 /* AddNewShowDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewShowDetailed.swift; sourceTree = "<group>"; };
+		78461773287C5F2C00EF5D74 /* DetailedShowHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedShowHomeView.swift; sourceTree = "<group>"; };
+		78461775287C5F2C00EF5D74 /* DetailedShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedShowView.swift; sourceTree = "<group>"; };
+		78461776287C5F2C00EF5D74 /* ShowDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetails.swift; sourceTree = "<group>"; };
+		78461785287C5F8100EF5D74 /* RadarrModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarrModel.swift; sourceTree = "<group>"; };
+		78461786287C5F8100EF5D74 /* NZBGetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZBGetModel.swift; sourceTree = "<group>"; };
+		78461788287C5F8100EF5D74 /* SonarrModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonarrModel.swift; sourceTree = "<group>"; };
+		78461790287C5FF800EF5D74 /* SonarrFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonarrFunctions.swift; sourceTree = "<group>"; };
+		78461791287C5FF800EF5D74 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
+		78461796287C60C100EF5D74 /* FilterModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModeViewModel.swift; sourceTree = "<group>"; };
+		78461797287C60C100EF5D74 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		78461798287C60C100EF5D74 /* sortModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortModeViewModel.swift; sourceTree = "<group>"; };
+		7846179D287C618B00EF5D74 /* RefreshableScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableScroll.swift; sourceTree = "<group>"; };
+		784617A0287C618C00EF5D74 /* LoadingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
+		784617A1287C618C00EF5D74 /* ItemNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemNavigationView.swift; sourceTree = "<group>"; };
+		784617AC287DAF8200EF5D74 /* SonarrHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarrHomeView.swift; sourceTree = "<group>"; };
+		784617AF287EFBC800EF5D74 /* NextAiringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAiringView.swift; sourceTree = "<group>"; };
+		784617B1287FCF9500EF5D74 /* NextAiringItemNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextAiringItemNavigationView.swift; sourceTree = "<group>"; };
+		787362D62880569400ACA30C /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
+		787362D8288067D400ACA30C /* MissingSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingSeriesView.swift; sourceTree = "<group>"; };
+		78B146342892DD2D006DF219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +118,21 @@
 		7846174A287C38BE00EF5D74 /* Mediarr */ = {
 			isa = PBXGroup;
 			children = (
+				78B146342892DD2D006DF219 /* Info.plist */,
+				784617AE287EDD8200EF5D74 /* New Sonarr */,
+				78461794287C609B00EF5D74 /* View Models */,
+				78461791287C5FF800EF5D74 /* Extensions.swift */,
+				78461790287C5FF800EF5D74 /* SonarrFunctions.swift */,
+				78461783287C5F4F00EF5D74 /* Models */,
+				7846176A287C5ED900EF5D74 /* Sonarr */,
+				78461769287C5B2500EF5D74 /* Settings */,
+				78461764287C59AC00EF5D74 /* Components */,
+				78461759287C392B00EF5D74 /* Main */,
 				7846174B287C38BE00EF5D74 /* MediarrApp.swift */,
-				7846174D287C38BE00EF5D74 /* ContentView.swift */,
+				7846174D287C38BE00EF5D74 /* HomeView.swift */,
 				7846174F287C38C000EF5D74 /* Assets.xcassets */,
 				78461751287C38C000EF5D74 /* Preview Content */,
+				787362D62880569400ACA30C /* Global Functions.swift */,
 			);
 			path = Mediarr;
 			sourceTree = "<group>";
@@ -65,6 +143,85 @@
 				78461752287C38C000EF5D74 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78461759287C392B00EF5D74 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		78461764287C59AC00EF5D74 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				78461765287C59C600EF5D74 /* SecureInputView.swift */,
+				784617A1287C618C00EF5D74 /* ItemNavigationView.swift */,
+				784617A0287C618C00EF5D74 /* LoadingAnimation.swift */,
+				7846179D287C618B00EF5D74 /* RefreshableScroll.swift */,
+				784617B1287FCF9500EF5D74 /* NextAiringItemNavigationView.swift */,
+				783DF9A22892C973000DDB2E /* Toast.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		78461769287C5B2500EF5D74 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				78461762287C598A00EF5D74 /* Settings.swift */,
+				78461767287C59F900EF5D74 /* SettingsStore.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7846176A287C5ED900EF5D74 /* Sonarr */ = {
+			isa = PBXGroup;
+			children = (
+				78461773287C5F2C00EF5D74 /* DetailedShowHomeView.swift */,
+				78461775287C5F2C00EF5D74 /* DetailedShowView.swift */,
+				7846176F287C5F2C00EF5D74 /* MovieView.swift */,
+				78461776287C5F2C00EF5D74 /* ShowDetails.swift */,
+				7846176D287C5F2C00EF5D74 /* SonarrTabBar.swift */,
+			);
+			path = Sonarr;
+			sourceTree = "<group>";
+		};
+		78461783287C5F4F00EF5D74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78461786287C5F8100EF5D74 /* NZBGetModel.swift */,
+				78461785287C5F8100EF5D74 /* RadarrModel.swift */,
+				78461788287C5F8100EF5D74 /* SonarrModel.swift */,
+				783DF9A02886C9B7000DDB2E /* SynologyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78461794287C609B00EF5D74 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				78461796287C60C100EF5D74 /* FilterModeViewModel.swift */,
+				78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */,
+				78461797287C60C100EF5D74 /* SideMenuViewModel.swift */,
+				78461798287C60C100EF5D74 /* sortModeViewModel.swift */,
+				783DF99C28859AC1000DDB2E /* SonarrViewModel.swift */,
+				783DF99E2886C8A0000DDB2E /* SynologyViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		784617AE287EDD8200EF5D74 /* New Sonarr */ = {
+			isa = PBXGroup;
+			children = (
+				7846176E287C5F2C00EF5D74 /* SonarrView.swift */,
+				784617AC287DAF8200EF5D74 /* SonarrHomeView.swift */,
+				784617AF287EFBC800EF5D74 /* NextAiringView.swift */,
+				7846176C287C5F2C00EF5D74 /* ShowView.swift */,
+				787362D8288067D400ACA30C /* MissingSeriesView.swift */,
+				78461771287C5F2C00EF5D74 /* AddNewShowDetailed.swift */,
+				7846176B287C5F2C00EF5D74 /* AddNewShow.swift */,
+			);
+			path = "New Sonarr";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +294,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7846174E287C38BE00EF5D74 /* ContentView.swift in Sources */,
+				783DF9A32892C973000DDB2E /* Toast.swift in Sources */,
+				784617AD287DAF8200EF5D74 /* SonarrHomeView.swift in Sources */,
+				78461763287C598A00EF5D74 /* Settings.swift in Sources */,
+				78461782287C5F2D00EF5D74 /* ShowDetails.swift in Sources */,
+				7846179A287C60C100EF5D74 /* FilterModeViewModel.swift in Sources */,
+				7846179C287C60C100EF5D74 /* sortModeViewModel.swift in Sources */,
+				78461766287C59C600EF5D74 /* SecureInputView.swift in Sources */,
+				78461779287C5F2D00EF5D74 /* SonarrTabBar.swift in Sources */,
+				78461768287C59F900EF5D74 /* SettingsStore.swift in Sources */,
+				787362D9288067D400ACA30C /* MissingSeriesView.swift in Sources */,
+				784617A2287C618C00EF5D74 /* RefreshableScroll.swift in Sources */,
+				7846179B287C60C100EF5D74 /* SideMenuViewModel.swift in Sources */,
+				7846177F287C5F2D00EF5D74 /* DetailedShowHomeView.swift in Sources */,
+				784617A6287C618C00EF5D74 /* ItemNavigationView.swift in Sources */,
+				784617A5287C618C00EF5D74 /* LoadingAnimation.swift in Sources */,
+				784617B0287EFBC800EF5D74 /* NextAiringView.swift in Sources */,
+				78461781287C5F2D00EF5D74 /* DetailedShowView.swift in Sources */,
+				784617B2287FCF9500EF5D74 /* NextAiringItemNavigationView.swift in Sources */,
+				7846177D287C5F2D00EF5D74 /* AddNewShowDetailed.swift in Sources */,
+				78461777287C5F2D00EF5D74 /* AddNewShow.swift in Sources */,
+				78461778287C5F2D00EF5D74 /* ShowView.swift in Sources */,
+				7846178B287C5F8100EF5D74 /* RadarrModel.swift in Sources */,
+				783DF9A12886C9B7000DDB2E /* SynologyModel.swift in Sources */,
+				7846178C287C5F8100EF5D74 /* NZBGetModel.swift in Sources */,
+				78461792287C5FF800EF5D74 /* SonarrFunctions.swift in Sources */,
+				7846174E287C38BE00EF5D74 /* HomeView.swift in Sources */,
+				7846178E287C5F8100EF5D74 /* SonarrModel.swift in Sources */,
+				78461793287C5FF800EF5D74 /* Extensions.swift in Sources */,
+				783DF99F2886C8A0000DDB2E /* SynologyViewModel.swift in Sources */,
+				787362D72880569400ACA30C /* Global Functions.swift in Sources */,
+				78461799287C60C100EF5D74 /* GridLayoutViewModel.swift in Sources */,
 				7846174C287C38BE00EF5D74 /* MediarrApp.swift in Sources */,
+				783DF99D28859AC1000DDB2E /* SonarrViewModel.swift in Sources */,
+				7846177A287C5F2D00EF5D74 /* SonarrView.swift in Sources */,
+				7846177B287C5F2D00EF5D74 /* MovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +460,9 @@
 				DEVELOPMENT_TEAM = Q72QLAFP35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mediarr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +489,9 @@
 				DEVELOPMENT_TEAM = Q72QLAFP35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mediarr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

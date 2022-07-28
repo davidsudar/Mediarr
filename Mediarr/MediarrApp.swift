@@ -11,7 +11,8 @@ import SwiftUI
 struct MediarrApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                
         }
     }
 }
