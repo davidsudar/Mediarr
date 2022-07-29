@@ -12,8 +12,8 @@ An ios app made to manage a home media server
 
 ## TODO
 - [ ] Handle Dark/Light Mode
-- [ ] Include NAS settings so values aren't hard coded
-- [ ] NAS rx and tx convert y axis to display b/s, kb/s, mb/s rather than just bytes
+- [x] Include NAS settings so values aren't hard coded
+- [x] NAS rx and tx convert y axis to display b/s, kb/s, mb/s rather than just bytes
 - [ ] SABnzbd Screen
 - [ ] Transmission Screen
 - [ ] Radarr Screen
