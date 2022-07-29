@@ -31,7 +31,7 @@ struct Series: Hashable, Decodable, Identifiable {
     let title, sortTitle, status, overview, network, seriesType, path, added: String
     let monitored: Bool
     let nextAiring, certification: String?
-    let images: Array<SonarrImage>
+    let images: [SonarrImage]
     let statistics: ShowStatistic
     let genres: [String]
     let tags: [Int]

@@ -79,7 +79,7 @@ struct HomeView: View {
                         }
                         .cornerRadius(8)
                         
-                        NavigationLink(destination: Text("Bazarr")) {
+                        NavigationLink(destination: TransmissionHomeView().environmentObject(settings)) {
                             ZStack {
                                 Color("Secondary").ignoresSafeArea()
                                 HStack{

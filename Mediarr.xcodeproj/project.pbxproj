@@ -33,7 +33,6 @@
 		78461793287C5FF800EF5D74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461791287C5FF800EF5D74 /* Extensions.swift */; };
 		78461799287C60C100EF5D74 /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */; };
 		7846179A287C60C100EF5D74 /* FilterModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461796287C60C100EF5D74 /* FilterModeViewModel.swift */; };
-		7846179B287C60C100EF5D74 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461797287C60C100EF5D74 /* SideMenuViewModel.swift */; };
 		7846179C287C60C100EF5D74 /* sortModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461798287C60C100EF5D74 /* sortModeViewModel.swift */; };
 		784617A2287C618C00EF5D74 /* RefreshableScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846179D287C618B00EF5D74 /* RefreshableScroll.swift */; };
 		784617A5287C618C00EF5D74 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617A0287C618C00EF5D74 /* LoadingAnimation.swift */; };
@@ -43,6 +42,13 @@
 		784617B2287FCF9500EF5D74 /* NextAiringItemNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784617B1287FCF9500EF5D74 /* NextAiringItemNavigationView.swift */; };
 		787362D72880569400ACA30C /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787362D62880569400ACA30C /* Global Functions.swift */; };
 		787362D9288067D400ACA30C /* MissingSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787362D8288067D400ACA30C /* MissingSeriesView.swift */; };
+		78B1463B2893A9C9006DF219 /* TransmissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1463A2893A9C9006DF219 /* TransmissionModel.swift */; };
+		78B1463E2893A9E1006DF219 /* TransmissionHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1463C2893A9E1006DF219 /* TransmissionHomeView.swift */; };
+		78B1463F2893A9E1006DF219 /* TransmissionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1463D2893A9E1006DF219 /* TransmissionItemView.swift */; };
+		78B146412893AA49006DF219 /* TransmissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B146402893AA48006DF219 /* TransmissionViewModel.swift */; };
+		78B146432893AB6E006DF219 /* TransmissionItemNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B146422893AB6E006DF219 /* TransmissionItemNavigationView.swift */; };
+		78B146462893BC8B006DF219 /* Transmission in Frameworks */ = {isa = PBXBuildFile; productRef = 78B146452893BC8B006DF219 /* Transmission */; };
+		78B1464828944E0C006DF219 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1464728944E0C006DF219 /* DropViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +79,6 @@
 		78461791287C5FF800EF5D74 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
 		78461796287C60C100EF5D74 /* FilterModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModeViewModel.swift; sourceTree = "<group>"; };
-		78461797287C60C100EF5D74 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		78461798287C60C100EF5D74 /* sortModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sortModeViewModel.swift; sourceTree = "<group>"; };
 		7846179D287C618B00EF5D74 /* RefreshableScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableScroll.swift; sourceTree = "<group>"; };
 		784617A0287C618C00EF5D74 /* LoadingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
@@ -84,6 +89,12 @@
 		787362D62880569400ACA30C /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
 		787362D8288067D400ACA30C /* MissingSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingSeriesView.swift; sourceTree = "<group>"; };
 		78B146342892DD2D006DF219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		78B1463A2893A9C9006DF219 /* TransmissionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionModel.swift; sourceTree = "<group>"; };
+		78B1463C2893A9E1006DF219 /* TransmissionHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmissionHomeView.swift; path = "../../../../Mediarr v2/Mediarr v2/Views/Screens/Transmission/TransmissionHomeView.swift"; sourceTree = "<group>"; };
+		78B1463D2893A9E1006DF219 /* TransmissionItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmissionItemView.swift; path = "../../../../Mediarr v2/Mediarr v2/Views/Screens/Transmission/TransmissionItemView.swift"; sourceTree = "<group>"; };
+		78B146402893AA48006DF219 /* TransmissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmissionViewModel.swift; sourceTree = "<group>"; };
+		78B146422893AB6E006DF219 /* TransmissionItemNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmissionItemNavigationView.swift; sourceTree = "<group>"; };
+		78B1464728944E0C006DF219 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B146462893BC8B006DF219 /* Transmission in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,12 +155,14 @@
 		78461764287C59AC00EF5D74 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				78B146422893AB6E006DF219 /* TransmissionItemNavigationView.swift */,
 				78461765287C59C600EF5D74 /* SecureInputView.swift */,
 				784617A1287C618C00EF5D74 /* ItemNavigationView.swift */,
 				784617A0287C618C00EF5D74 /* LoadingAnimation.swift */,
 				7846179D287C618B00EF5D74 /* RefreshableScroll.swift */,
 				784617B1287FCF9500EF5D74 /* NextAiringItemNavigationView.swift */,
 				783DF9A22892C973000DDB2E /* Toast.swift */,
+				78B1464728944E0C006DF219 /* DropViewDelegate.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,6 +191,7 @@
 		78461783287C5F4F00EF5D74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				78B1463A2893A9C9006DF219 /* TransmissionModel.swift */,
 				78461786287C5F8100EF5D74 /* NZBGetModel.swift */,
 				78461785287C5F8100EF5D74 /* RadarrModel.swift */,
 				78461788287C5F8100EF5D74 /* SonarrModel.swift */,
@@ -190,10 +205,10 @@
 			children = (
 				78461796287C60C100EF5D74 /* FilterModeViewModel.swift */,
 				78461795287C60C100EF5D74 /* GridLayoutViewModel.swift */,
-				78461797287C60C100EF5D74 /* SideMenuViewModel.swift */,
 				78461798287C60C100EF5D74 /* sortModeViewModel.swift */,
 				783DF99C28859AC1000DDB2E /* SonarrViewModel.swift */,
 				783DF99E2886C8A0000DDB2E /* SynologyViewModel.swift */,
+				78B146402893AA48006DF219 /* TransmissionViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -242,6 +257,8 @@
 		78B146382893A2E5006DF219 /* Transmission */ = {
 			isa = PBXGroup;
 			children = (
+				78B1463C2893A9E1006DF219 /* TransmissionHomeView.swift */,
+				78B1463D2893A9E1006DF219 /* TransmissionItemView.swift */,
 			);
 			path = Transmission;
 			sourceTree = "<group>";
@@ -269,6 +286,9 @@
 			dependencies = (
 			);
 			name = Mediarr;
+			packageProductDependencies = (
+				78B146452893BC8B006DF219 /* Transmission */,
+			);
 			productName = Mediarr;
 			productReference = 78461748287C38BE00EF5D74 /* Mediarr.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 7846173F287C38BE00EF5D74;
+			packageReferences = (
+				78B146442893BC8B006DF219 /* XCRemoteSwiftPackageReference "Transmission-Swift" */,
+			);
 			productRefGroup = 78461749287C38BE00EF5D74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,6 +348,8 @@
 				783DF9A32892C973000DDB2E /* Toast.swift in Sources */,
 				784617AD287DAF8200EF5D74 /* SonarrHomeView.swift in Sources */,
 				78461763287C598A00EF5D74 /* Settings.swift in Sources */,
+				78B146432893AB6E006DF219 /* TransmissionItemNavigationView.swift in Sources */,
+				78B1463E2893A9E1006DF219 /* TransmissionHomeView.swift in Sources */,
 				78461782287C5F2D00EF5D74 /* ShowDetails.swift in Sources */,
 				7846179A287C60C100EF5D74 /* FilterModeViewModel.swift in Sources */,
 				7846179C287C60C100EF5D74 /* sortModeViewModel.swift in Sources */,
@@ -333,9 +358,9 @@
 				78461768287C59F900EF5D74 /* SettingsStore.swift in Sources */,
 				787362D9288067D400ACA30C /* MissingSeriesView.swift in Sources */,
 				784617A2287C618C00EF5D74 /* RefreshableScroll.swift in Sources */,
-				7846179B287C60C100EF5D74 /* SideMenuViewModel.swift in Sources */,
 				7846177F287C5F2D00EF5D74 /* DetailedShowHomeView.swift in Sources */,
 				784617A6287C618C00EF5D74 /* ItemNavigationView.swift in Sources */,
+				78B146412893AA49006DF219 /* TransmissionViewModel.swift in Sources */,
 				784617A5287C618C00EF5D74 /* LoadingAnimation.swift in Sources */,
 				784617B0287EFBC800EF5D74 /* NextAiringView.swift in Sources */,
 				78461781287C5F2D00EF5D74 /* DetailedShowView.swift in Sources */,
@@ -343,10 +368,12 @@
 				7846177D287C5F2D00EF5D74 /* AddNewShowDetailed.swift in Sources */,
 				78461777287C5F2D00EF5D74 /* AddNewShow.swift in Sources */,
 				78461778287C5F2D00EF5D74 /* ShowView.swift in Sources */,
+				78B1463B2893A9C9006DF219 /* TransmissionModel.swift in Sources */,
 				7846178B287C5F8100EF5D74 /* RadarrModel.swift in Sources */,
 				783DF9A12886C9B7000DDB2E /* SynologyModel.swift in Sources */,
 				7846178C287C5F8100EF5D74 /* NZBGetModel.swift in Sources */,
 				78461792287C5FF800EF5D74 /* SonarrFunctions.swift in Sources */,
+				78B1464828944E0C006DF219 /* DropViewDelegate.swift in Sources */,
 				7846174E287C38BE00EF5D74 /* HomeView.swift in Sources */,
 				7846178E287C5F8100EF5D74 /* SonarrModel.swift in Sources */,
 				78461793287C5FF800EF5D74 /* Extensions.swift in Sources */,
@@ -355,6 +382,7 @@
 				78461799287C60C100EF5D74 /* GridLayoutViewModel.swift in Sources */,
 				7846174C287C38BE00EF5D74 /* MediarrApp.swift in Sources */,
 				783DF99D28859AC1000DDB2E /* SonarrViewModel.swift in Sources */,
+				78B1463F2893A9E1006DF219 /* TransmissionItemView.swift in Sources */,
 				7846177A287C5F2D00EF5D74 /* SonarrView.swift in Sources */,
 				7846177B287C5F2D00EF5D74 /* MovieView.swift in Sources */,
 			);
@@ -557,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		78B146442893BC8B006DF219 /* XCRemoteSwiftPackageReference "Transmission-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jameshurst/Transmission-Swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78B146452893BC8B006DF219 /* Transmission */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78B146442893BC8B006DF219 /* XCRemoteSwiftPackageReference "Transmission-Swift" */;
+			productName = Transmission;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78461740287C38BE00EF5D74 /* Project object */;
 }

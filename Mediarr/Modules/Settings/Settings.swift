@@ -88,6 +88,36 @@ struct Settings: View {
                 }
             }.listRowBackground(Color("Secondary"))
             
+            Section(header: Text("Transmission Settings")) {
+                HStack() {
+                    Text("Host:")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    TextField("192.168.1.2", text: $settings.transmissionHost)
+                }
+                HStack {
+                    Text("Port:")
+                        .font(.callout)
+                        .bold()
+                    TextField("9091", value: $settings.transmissionPort, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                }
+                HStack {
+                    Text("Username:")
+                        .font(.callout)
+                        .bold()
+                    TextField("username", text: $settings.transmissionUsername)
+                }
+                HStack {
+                    Text("Password:")
+                        .font(.callout)
+                        .bold()
+                    SecureInputView("password", text: $settings.transmissionPassword)
+                }
+
+            }.listRowBackground(Color("Secondary"))
+            
             Section(header: Text("Synology Settings")) {
                 HStack() {
                     Text("Host:")
