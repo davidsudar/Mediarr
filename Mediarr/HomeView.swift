@@ -96,7 +96,7 @@ struct HomeView: View {
                                     if auth != nil {
                                         vm.getStorage(with: settings)
                                         DispatchQueue.global(qos: .background).async {
-                                                startTimer()
+                                            startTimer()
                                         }
                                         
                                     }
@@ -151,8 +151,24 @@ struct HomeView: View {
                                                 
                                             }
                                             .foregroundStyle(by: .value("Type", series.type))
+                                            .lineStyle(StrokeStyle(lineWidth: 2))
+                                            .interpolationMethod(.catmullRom)
                                         }
                                     }
+                                    .chartYAxis {
+                                        AxisMarks(position: .trailing, values: .automatic) { value in
+                                            AxisGridLine(centered: true, stroke: StrokeStyle(lineWidth: 1))
+                                            AxisValueLabel() {
+                                                if let intValue = value.as(Int.self) {
+                                                    Text(GetShowFileSize(bytes: intValue)+"/s")
+                                                    .font(.system(size: 10))
+                                                }
+                                            }
+                                        }
+                                    } 
+                                    .chartXAxis(.hidden)
+                                    
+                                    
                                     
                                 }.padding()
                             }
@@ -169,8 +185,8 @@ struct HomeView: View {
             
             .navigationTitle("Dashboard")
             //latest beta broke this
-//            .toolbarBackground(.visible, in: .navigationBar, .tabBar, .automatic)
-//            .toolbarBackground(Color("Secondary"), in: .navigationBar, .tabBar, .automatic)
+            //            .toolbarBackground(.visible, in: .navigationBar, .tabBar, .automatic)
+            //            .toolbarBackground(Color("Secondary"), in: .navigationBar, .tabBar, .automatic)
             .toolbar(content: {
                 NavigationLink(destination: Settings().environmentObject(settings)) {
                     Image(systemName: "gear")
@@ -181,7 +197,7 @@ struct HomeView: View {
     }
     
     func startTimer() {
-//        vm.getUtilisation(with: settings)
+        //        vm.getUtilisation(with: settings)
         // start timer (tick every 10 seconds)
         timer = Timer.publish(every: 3, on: .main, in: .common)
             .autoconnect()
