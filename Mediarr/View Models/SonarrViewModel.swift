@@ -21,7 +21,7 @@ class SonarrViewModel: ObservableObject {
     
     @MainActor
     func getRootFolders(with settings: SettingsStore) {
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/v3/rootfolder?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/rootfolder?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -38,7 +38,7 @@ class SonarrViewModel: ObservableObject {
     
     @MainActor
     func getQualityProfiles(with settings: SettingsStore) {
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/profile?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/profile?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -55,7 +55,7 @@ class SonarrViewModel: ObservableObject {
     
     @MainActor
     func GetLanguageProfiles(with settings: SettingsStore) {
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/v3/languageprofile?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/languageprofile?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -71,7 +71,7 @@ class SonarrViewModel: ObservableObject {
     }
     
     func getTags(with settings: SettingsStore) {
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/v3/tag?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/tag?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -90,7 +90,7 @@ class SonarrViewModel: ObservableObject {
     func getShows(with settings: SettingsStore) {
         print(settings.sonarrApiKey)
         print("ApiKey above")
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/v3/series?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/series?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -107,7 +107,7 @@ class SonarrViewModel: ObservableObject {
     }
     @MainActor
     func AddShows(with settings: SettingsStore, show: AddShowObject) {
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/v3/series?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/series?apikey="+settings.sonarrApiKey) else { return }
         print(url)
         do {
             
@@ -142,18 +142,6 @@ class SonarrViewModel: ObservableObject {
                     
                     task.resume()
         }
-//        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-//            guard let data = data else { return }
-//            do {
-//                let rss = try JSONDecoder().decode([Series].self, from: data)
-//                DispatchQueue.main.async{
-//                    self.shows = rss
-//                    self.shows = self.shows.sorted { $0.title < $1.title }
-//                }
-//            } catch {
-//                print("Failed to decode: \(error)")
-//            }
-//        }.resume()
     }
     
     @MainActor
@@ -164,7 +152,7 @@ class SonarrViewModel: ObservableObject {
         form.dateFormat = "yyyy-MM-dd"
         let today = form.string(from:Date())
         let toDateString = form.string(from:Calendar.current.date(byAdding: .day, value: 1, to: toDate!)!)
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/calendar?apikey="+settings.sonarrApiKey+"&start=" + today + "&end=" + toDateString) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/calendar?apikey="+settings.sonarrApiKey+"&start=" + today + "&end=" + toDateString) else { return }
 
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -184,7 +172,7 @@ class SonarrViewModel: ObservableObject {
     @MainActor
     func getMissingShows(with settings: SettingsStore) {
         
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/wanted/missing?apikey="+settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/wanted/missing?apikey="+settings.sonarrApiKey) else { return }
 
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
@@ -212,7 +200,7 @@ class SonarrViewModel: ObservableObject {
         
         
         
-        guard let url = URL(string: "http://"+settings.sonarrHost+":"+settings.sonarrPort+"/api/series/lookup?term=" + search + "&apikey=" + settings.sonarrApiKey) else { return }
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/series/lookup?term=" + search + "&apikey=" + settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }

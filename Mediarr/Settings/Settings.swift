@@ -31,7 +31,8 @@ struct Settings: View {
                     Text("Port:")
                         .font(.callout)
                         .bold()
-                    TextField("192.168.1.2", text: $settings.sonarrPort)
+                    TextField("8989", value: $settings.sonarrPort, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
                 HStack {
                     Text("Api Key:")
@@ -39,7 +40,7 @@ struct Settings: View {
                         .bold()
                     TextField("192.168.1.2", text: $settings.sonarrApiKey)
                 }
-            }
+            }.listRowBackground(Color("Secondary"))
             
             Section(header: Text("Radarr Settings")) {
                 HStack() {
@@ -53,7 +54,8 @@ struct Settings: View {
                     Text("Port:")
                         .font(.callout)
                         .bold()
-                    TextField("192.168.1.2", text: $settings.radarrPort)
+                    TextField("7878", value: $settings.radarrPort, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
                 HStack {
                     Text("Api Key:")
@@ -61,8 +63,32 @@ struct Settings: View {
                         .bold()
                     TextField("192.168.1.2", text: $settings.radarrApiKey)
                 }
-            }
-        }
+            }.listRowBackground(Color("Secondary"))
+            
+            Section(header: Text("SABnzbd Settings")) {
+                HStack() {
+                    Text("Host:")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    TextField("192.168.1.2", text: $settings.sabnzbdHost)
+                }
+                HStack {
+                    Text("Port:")
+                        .font(.callout)
+                        .bold()
+                    TextField("8080", value: $settings.sabnzbdPort, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                }
+                HStack {
+                    Text("API Key:")
+                        .font(.callout)
+                        .bold()
+                    TextField("API Key", text: $settings.sabnzbdApiKey)
+                }
+            }.listRowBackground(Color("Secondary"))
+        }.listRowBackground(Color("Secondary"))
+            
         .scrollContentBackground(.hidden)
         .navigationBarTitle("Settings")
     }

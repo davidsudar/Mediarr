@@ -24,6 +24,7 @@ final class SettingsStore: ObservableObject {
         static let sabnzbdPort = "sabnzbd_port"
         static let sabnzbdUsername = "sabnzbd_username"
         static let sabnzbdPassword = "sabnzbd_password"
+        static let sabnzbdApiKey = "sabnzbd_api_key"
         static let nasHost = "nas_host"
         static let nasPort = "nas_port"
         static let nasUsername = "nas_username"
@@ -40,10 +41,10 @@ final class SettingsStore: ObservableObject {
 
         defaults.register(defaults: [
             Keys.sonarrHost: "",
-            Keys.sonarrPort: "8989",
+            Keys.sonarrPort: 8989,
             Keys.sonarrApiKey: "",
             Keys.radarrHost: "",
-            Keys.radarrPort: "7878",
+            Keys.radarrPort: 7878,
             Keys.radarrApiKey: "",
             Keys.transmissionHost: "",
             Keys.transmissionPort: 9091,
@@ -53,6 +54,7 @@ final class SettingsStore: ObservableObject {
             Keys.sabnzbdPort: 6789,
             Keys.sabnzbdUsername: "sabnzbd",
             Keys.sabnzbdPassword: "tegbzn6789",
+            Keys.sabnzbdApiKey: "",
             Keys.nasHost: "192.168.1.2",
             Keys.nasPort: 5000,
             Keys.nasUsername: "sudar",
@@ -70,9 +72,9 @@ final class SettingsStore: ObservableObject {
         get { defaults.string(forKey: Keys.sonarrHost) ?? "" }
     }
 
-    var sonarrPort: String {
+    var sonarrPort: Int {
         set { defaults.set(newValue, forKey: Keys.sonarrPort) }
-        get { defaults.string(forKey: Keys.sonarrPort) ?? ""}
+        get { defaults.integer(forKey: Keys.sonarrPort)}
     }
 
     var sonarrApiKey: String {
@@ -84,9 +86,9 @@ final class SettingsStore: ObservableObject {
         get { defaults.string(forKey: Keys.radarrHost) ?? "" }
     }
 
-    var radarrPort: String {
+    var radarrPort: Int {
         set { defaults.set(newValue, forKey: Keys.radarrPort) }
-        get { defaults.string(forKey: Keys.radarrPort) ?? ""}
+        get { defaults.integer(forKey: Keys.radarrPort)}
     }
 
     var radarrApiKey: String {
@@ -129,6 +131,11 @@ final class SettingsStore: ObservableObject {
     var sabnzbdPassword: String {
         set { defaults.set(newValue, forKey: Keys.sabnzbdPassword) }
         get { defaults.string(forKey: Keys.sabnzbdPassword) ?? "" }
+    }
+    
+    var sabnzbdApiKey: String {
+        set { defaults.set(newValue, forKey: Keys.sabnzbdApiKey) }
+        get { defaults.string(forKey: Keys.sabnzbdApiKey) ?? "" }
     }
     
     var nasHost: String {

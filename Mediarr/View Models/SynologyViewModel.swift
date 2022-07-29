@@ -103,13 +103,13 @@ class SynologyViewModel: ObservableObject {
                         }
                     }
                     
-                    for index in rxIndexesToRemove {
-                        self.rxHistory.remove(at: index) //Not working. index out of range
-                    }
-                    
-                    for index in txIndexesToRemove {
-                        self.txHistory.remove(at: index)
-                    }
+//                    for index in rxIndexesToRemove {
+//                        self.rxHistory.remove(at: index) //Not working. index out of range
+//                    }
+//                    
+//                    for index in txIndexesToRemove {
+//                        self.txHistory.remove(at: index)
+//                    }
                     
                     let x = SynologyNetworkChartObject(type: "Upload", data: self.txHistory)
                     let y = SynologyNetworkChartObject(type: "Download", data: self.rxHistory)
