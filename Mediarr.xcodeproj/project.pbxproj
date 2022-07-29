@@ -14,7 +14,6 @@
 		7846174C287C38BE00EF5D74 /* MediarrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846174B287C38BE00EF5D74 /* MediarrApp.swift */; };
 		7846174E287C38BE00EF5D74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846174D287C38BE00EF5D74 /* HomeView.swift */; };
 		78461750287C38C000EF5D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7846174F287C38C000EF5D74 /* Assets.xcassets */; };
-		78461753287C38C000EF5D74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78461752287C38C000EF5D74 /* Preview Assets.xcassets */; };
 		78461763287C598A00EF5D74 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461762287C598A00EF5D74 /* Settings.swift */; };
 		78461766287C59C600EF5D74 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461765287C59C600EF5D74 /* SecureInputView.swift */; };
 		78461768287C59F900EF5D74 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78461767287C59F900EF5D74 /* SettingsStore.swift */; };
@@ -55,7 +54,6 @@
 		7846174B287C38BE00EF5D74 /* MediarrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediarrApp.swift; sourceTree = "<group>"; };
 		7846174D287C38BE00EF5D74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7846174F287C38C000EF5D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		78461752287C38C000EF5D74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78461762287C598A00EF5D74 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		78461765287C59C600EF5D74 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		78461767287C59F900EF5D74 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
@@ -118,36 +116,26 @@
 		7846174A287C38BE00EF5D74 /* Mediarr */ = {
 			isa = PBXGroup;
 			children = (
-				78B146342892DD2D006DF219 /* Info.plist */,
-				784617AE287EDD8200EF5D74 /* New Sonarr */,
 				78461794287C609B00EF5D74 /* View Models */,
+				78461783287C5F4F00EF5D74 /* Models */,
+				78461764287C59AC00EF5D74 /* Components */,
+				78B146352893A298006DF219 /* Modules */,
+				7846176A287C5ED900EF5D74 /* Sonarr */,
+				78461759287C392B00EF5D74 /* Main */,
+				787362D62880569400ACA30C /* Global Functions.swift */,
 				78461791287C5FF800EF5D74 /* Extensions.swift */,
 				78461790287C5FF800EF5D74 /* SonarrFunctions.swift */,
-				78461783287C5F4F00EF5D74 /* Models */,
-				7846176A287C5ED900EF5D74 /* Sonarr */,
-				78461769287C5B2500EF5D74 /* Settings */,
-				78461764287C59AC00EF5D74 /* Components */,
-				78461759287C392B00EF5D74 /* Main */,
-				7846174B287C38BE00EF5D74 /* MediarrApp.swift */,
-				7846174D287C38BE00EF5D74 /* HomeView.swift */,
+				78B146342892DD2D006DF219 /* Info.plist */,
 				7846174F287C38C000EF5D74 /* Assets.xcassets */,
-				78461751287C38C000EF5D74 /* Preview Content */,
-				787362D62880569400ACA30C /* Global Functions.swift */,
 			);
 			path = Mediarr;
-			sourceTree = "<group>";
-		};
-		78461751287C38C000EF5D74 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				78461752287C38C000EF5D74 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		78461759287C392B00EF5D74 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7846174B287C38BE00EF5D74 /* MediarrApp.swift */,
+				7846174D287C38BE00EF5D74 /* HomeView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -210,7 +198,7 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
-		784617AE287EDD8200EF5D74 /* New Sonarr */ = {
+		784617AE287EDD8200EF5D74 /* Sonarr */ = {
 			isa = PBXGroup;
 			children = (
 				7846176E287C5F2C00EF5D74 /* SonarrView.swift */,
@@ -221,7 +209,48 @@
 				78461771287C5F2C00EF5D74 /* AddNewShowDetailed.swift */,
 				7846176B287C5F2C00EF5D74 /* AddNewShow.swift */,
 			);
-			path = "New Sonarr";
+			path = Sonarr;
+			sourceTree = "<group>";
+		};
+		78B146352893A298006DF219 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				78B146392893A2F1006DF219 /* SABnzbd */,
+				78B146382893A2E5006DF219 /* Transmission */,
+				78B146372893A2CB006DF219 /* Bazarr */,
+				78B146362893A2BB006DF219 /* Radarr */,
+				784617AE287EDD8200EF5D74 /* Sonarr */,
+				78461769287C5B2500EF5D74 /* Settings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		78B146362893A2BB006DF219 /* Radarr */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Radarr;
+			sourceTree = "<group>";
+		};
+		78B146372893A2CB006DF219 /* Bazarr */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bazarr;
+			sourceTree = "<group>";
+		};
+		78B146382893A2E5006DF219 /* Transmission */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transmission;
+			sourceTree = "<group>";
+		};
+		78B146392893A2F1006DF219 /* SABnzbd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SABnzbd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78461753287C38C000EF5D74 /* Preview Assets.xcassets in Resources */,
 				78461750287C38C000EF5D74 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

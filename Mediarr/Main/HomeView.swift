@@ -52,6 +52,20 @@ struct HomeView: View {
                         }
                         .cornerRadius(8)
                         
+                        NavigationLink(destination: Text("Bazarr")) {
+                            ZStack {
+                                Color("Secondary").ignoresSafeArea()
+                                HStack{
+                                    Image(systemName: "captions.bubble")
+                                    Text("Bazarr")
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                }.padding()
+                            }
+                            .tint(.white)
+                        }
+                        .cornerRadius(8)
+                        
                         NavigationLink(destination: Text("SABnzbd")) {
                             ZStack {
                                 Color("Secondary").ignoresSafeArea()
@@ -65,12 +79,12 @@ struct HomeView: View {
                         }
                         .cornerRadius(8)
                         
-                        NavigationLink(destination: Settings().environmentObject(settings)) {
+                        NavigationLink(destination: Text("Bazarr")) {
                             ZStack {
                                 Color("Secondary").ignoresSafeArea()
                                 HStack{
-                                    Image(systemName: "gear")
-                                    Text("Settings")
+                                    Image(systemName: "arrow.down")
+                                    Text("Transmission")
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 }.padding()
@@ -78,6 +92,7 @@ struct HomeView: View {
                             .tint(.white)
                         }
                         .cornerRadius(8)
+                        
                     })
                     .padding()
                     .modifier(BackgroundColorStyle())
@@ -184,6 +199,7 @@ struct HomeView: View {
             }
             
             .navigationTitle("Dashboard")
+            .navigationBarTitleDisplayMode(.inline)
             //latest beta broke this
             //            .toolbarBackground(.visible, in: .navigationBar, .tabBar, .automatic)
             //            .toolbarBackground(Color("Secondary"), in: .navigationBar, .tabBar, .automatic)

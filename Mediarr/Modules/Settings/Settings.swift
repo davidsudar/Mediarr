@@ -87,8 +87,37 @@ struct Settings: View {
                     TextField("API Key", text: $settings.sabnzbdApiKey)
                 }
             }.listRowBackground(Color("Secondary"))
-        }.listRowBackground(Color("Secondary"))
             
+            Section(header: Text("Synology Settings")) {
+                HStack() {
+                    Text("Host:")
+                        .font(.callout)
+                        .bold()
+                    Spacer()
+                    TextField("192.168.1.2", text: $settings.nasHost)
+                }
+                HStack {
+                    Text("Port:")
+                        .font(.callout)
+                        .bold()
+                    TextField("8080", value: $settings.nasPort, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                }
+                HStack {
+                    Text("Username:")
+                        .font(.callout)
+                        .bold()
+                    TextField("API Key", text: $settings.nasUsername)
+                }
+                HStack {
+                    Text("Password:")
+                        .font(.callout)
+                        .bold()
+                    SecureInputView("password", text: $settings.nasPassword)
+                }
+            }.listRowBackground(Color("Secondary"))
+
+        }
         .scrollContentBackground(.hidden)
         .navigationBarTitle("Settings")
     }

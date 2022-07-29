@@ -20,9 +20,17 @@ class SynologyViewModel: ObservableObject {
     
     @MainActor
     func getSid(with settings: SettingsStore) {
-        guard let url = URL(string: "http://192.168.1.2:5000/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=sudar&passwd=Avids2233%23&session=FileStation&format=sid") else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+        let hostAndPort = "http://" + settings.nasHost + ":" + String(settings.nasPort)
+        var strURL = """
+        /webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account=
+        """
+        strURL = hostAndPort + strURL + settings.nasUsername + "&passwd=" + settings.nasPassword + "&session=FileStation&format=sid"
+        let encoded = strURL.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        
+        let url = URL(string: encoded ?? "")
+        
+        URLSession.shared.dataTask(with: url!) { (data, resp, err) in
             guard let data = data else { return }
             do {
                 let rss = try JSONDecoder().decode(SynologyAuth.self, from: data)
@@ -38,10 +46,11 @@ class SynologyViewModel: ObservableObject {
     
     @MainActor
     func getStorage(with settings: SettingsStore) {
+        let hostAndPort = "http://" + settings.nasHost + ":" + String(settings.nasPort)
         var strURL = """
-        http://192.168.1.2:5000/webapi/entry.cgi?api=SYNO.FileStation.List&version=2&method=list_share&additional=["volume_status"]&_sid=
+        /webapi/entry.cgi?api=SYNO.FileStation.List&version=2&method=list_share&additional=["volume_status"]&_sid=
         """
-        strURL = strURL + (auth?.data.sid ?? "")
+        strURL = hostAndPort + strURL + (auth?.data.sid ?? "")
         let encoded = strURL.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         
         let url = URL(string: encoded ?? "")
@@ -61,10 +70,11 @@ class SynologyViewModel: ObservableObject {
     
     @MainActor
     func getUtilisation(with settings: SettingsStore) {
+        let hostAndPort = "http://" + settings.nasHost + ":" + String(settings.nasPort)
         var strURL = """
-        http://192.168.1.2:5000/webapi/entry.cgi?api=SYNO.Core.System.Utilization&version=1&method=get&_sid=
+        /webapi/entry.cgi?api=SYNO.Core.System.Utilization&version=1&method=get&_sid=
         """
-        strURL = strURL + (auth?.data.sid ?? "")
+        strURL = hostAndPort + strURL + (auth?.data.sid ?? "")
         let encoded = strURL.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         
         let url = URL(string: encoded ?? "")
@@ -83,38 +93,19 @@ class SynologyViewModel: ObservableObject {
                     
                     self.rxHistory.append(rxData)
                     self.txHistory.append(txData)
-                    var rxIndexesToRemove = [Int]()
-                    var txIndexesToRemove = [Int]()
                     
-                    for index in self.rxHistory.indices {
-
-                        let diffs = Calendar.current.dateComponents([.minute], from: self.rxHistory[index].date, to: Date())
-
-                        if diffs.minute ?? 0 >= 1 {
-                            rxIndexesToRemove.append(index)
-                        }
-                    }
-
-                    for index in self.txHistory.indices {
-
-                        let diffs = Calendar.current.dateComponents([.minute], from: self.txHistory[index].date, to: Date())
-                        if diffs.minute ?? 0 >= 1 {
-                            txIndexesToRemove.append(index)
-                        }
+                    if self.rxHistory.count > 20 {
+                        self.rxHistory.remove(at: 0)
                     }
                     
-//                    for index in rxIndexesToRemove {
-//                        self.rxHistory.remove(at: index) //Not working. index out of range
-//                    }
-//                    
-//                    for index in txIndexesToRemove {
-//                        self.txHistory.remove(at: index)
-//                    }
+                    if self.txHistory.count > 20 {
+                        self.txHistory.remove(at: 0)
+                    }
                     
-                    let x = SynologyNetworkChartObject(type: "Upload", data: self.txHistory)
-                    let y = SynologyNetworkChartObject(type: "Download", data: self.rxHistory)
+                    let upload = SynologyNetworkChartObject(type: "Upload", data: self.txHistory)
+                    let download = SynologyNetworkChartObject(type: "Download", data: self.rxHistory)
                     
-                    self.networkHistory = [x, y]
+                    self.networkHistory = [upload, download]
                     
                 }
             } catch {
