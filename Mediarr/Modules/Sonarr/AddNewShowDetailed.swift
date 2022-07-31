@@ -247,6 +247,6 @@ struct AddNewShowDetailed: View {
 
 struct AddNewShowDetailed_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewShowDetailed(vm: SonarrViewModel(), newShow: SearchSeries(title: "Test Show", titleSlug: "", overview: "This will be the description of the test show", seasonCount: 2, year: 2017, id: 1, profileId: 0, images: [SonarrSearchImage(coverType: "banner", url: "https://artworks.thetvdb.com/banners/graphical/267440-g.jpg")], seasons: [SonarrSearchSeason(seasonNumber: 1, monitored: true)])).environmentObject(SettingsStore())
+        AddNewShowDetailed(vm: SonarrViewModel(), newShow: SearchSeries(title: "Test Show", titleSlug: "", overview: "This will be the description of the test show", seasonCount: 2, year: 2017, id: 1, profileId: 0, images: [SonarrImageNoRemote(coverType: "banner", url: "https://artworks.thetvdb.com/banners/graphical/267440-g.jpg")], seasons: [SonarrSearchSeason(seasonNumber: 1, monitored: true)])).environmentObject(SettingsStore())
     }
 }

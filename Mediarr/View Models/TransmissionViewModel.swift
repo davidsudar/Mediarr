@@ -71,6 +71,18 @@ class TransmissionViewModel: ObservableObject {
         })
     }
     
+    @MainActor
+    func setTorrentQueuePosition(with settings: SettingsStore, id: Int, queuePosition: Int) {
+        let info = makeConfig(server: settings.transmissionHost, port: settings.transmissionPort, username: settings.transmissionUsername, password: settings.transmissionPassword)
+        
+        setQueuePosition(transferId: id, queuePosition: queuePosition, info: info, onComplete: { stats in
+            DispatchQueue.main.async{
+//                self.sessionStats = stats
+            }
+//            self.getSession(with: settings)
+        })
+    }
+    
     func pauseAll(with settings: SettingsStore) {
         let info = makeConfig(server: settings.transmissionHost, port: settings.transmissionPort, username: settings.transmissionUsername, password: settings.transmissionPassword)
         

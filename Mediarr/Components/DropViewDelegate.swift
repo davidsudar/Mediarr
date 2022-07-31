@@ -13,9 +13,13 @@ struct DropViewDelegate: DropDelegate {
     var currentItem: Torrent
     var items: Binding<[Torrent]>
     var draggingItem: Binding<Torrent?>
+    var settings: SettingsStore
 
     func performDrop(info: DropInfo) -> Bool {
         vm.isEditing = false
+        let index = items.wrappedValue.firstIndex(where: {$0.id == draggingItem.wrappedValue?.id})
+        vm.setTorrentQueuePosition(with: settings, id: draggingItem.wrappedValue!.id, queuePosition:
+                                    index!)
         draggingItem.wrappedValue = nil // <- HERE
         return true
     }

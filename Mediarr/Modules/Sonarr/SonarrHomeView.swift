@@ -10,6 +10,8 @@ import SwiftUI
 struct SonarrHomeView: View {
     @EnvironmentObject var settings: SettingsStore
     @StateObject var vm = SonarrViewModel()
+    @State var isShowingMoreSheet = false
+    @State private var showUpdateAllToast = false
     
     init() {
         configureScrollEdgeAppearance()
@@ -53,8 +55,44 @@ struct SonarrHomeView: View {
                 })
                 .toolbar(content: {
                     AddButton(destination: AddNewShow(vm: vm).environmentObject(settings))
+                    Button(action: {
+                        self.isShowingMoreSheet = true
+                    }, label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.accentColor)
+                    })
                 })
-                
+                .sheet(isPresented: $isShowingMoreSheet) {
+                    VStack(spacing: 20){
+                        Button(action: {
+                            
+                        }, label: {
+                            HStack{
+                                Image(systemName: "magnifyingglass")
+                                Text("Search Monitored")
+                            }.foregroundColor(.blue)
+                        })
+                        Button(action: {
+                            vm.updateAll(with: settings)
+                        }, label: {
+                            HStack{
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                                Text("Update All")
+                            }.foregroundColor(.blue)
+                        })
+                        .toast(message: "Updating All Shows", isShowing: $showUpdateAllToast,
+                                     duration: Toast.short)
+                        Button(action: {
+                            
+                        }, label: {
+                            HStack{
+                                Image(systemName: "network")
+                                Text("View Web GUI")
+                            }.foregroundColor(.orange)
+                        })
+                    }
+                    .presentationDetents([.medium, .large])
+                }
             }
             .navigationTitle("Sonarr")
             .navigationBarTitleDisplayMode(.inline)

@@ -1,6 +1,6 @@
 //
 //  TransmissionModel.swift
-//  Mediarr v2
+//  Mediarr
 //
 //  Created by David Sudar on 20/6/2022.
 //
@@ -680,6 +680,46 @@ public func setTransferFiles(transferId: Int, files: [Int], info: (config: Trans
         case 409?: // If we get a 409, save the token and try again
             authorize(httpResp: httpResp)
             setTransferFiles(transferId: transferId, files: files, info: info, onComplete: onComplete)
+            return
+        case 401?:
+            return onComplete(TransmissionResponse.forbidden)
+        case 200?:
+            return onComplete(TransmissionResponse.success)
+        default:
+            return onComplete(TransmissionResponse.failed)
+        }
+    }
+    task.resume()
+}
+
+/// Sets the exact queue position of torrentId
+public func setQueuePosition(transferId: Int, queuePosition: Int, info: (config: TransmissionConfig, auth: TransmissionAuth), onComplete: @escaping (TransmissionResponse) -> Void) {
+    url = info.config
+    url?.scheme = "http"
+    url?.path = "/transmission/rpc"
+    url?.port = info.config.port ?? 443
+    
+    let requestBody = TorrentActionRequest(
+        method: "torrent-set",
+        arguments: [
+            "ids": [transferId],
+            "queuePosition": [queuePosition]
+        ]
+    )
+    
+    let req = makeRequest(requestBody: requestBody, auth: info.auth)
+    
+    let task = URLSession.shared.dataTask(with: req) { (data, resp, err) in
+        if err != nil {
+            onComplete(TransmissionResponse.configError)
+        }
+        
+        let httpResp = resp as? HTTPURLResponse
+        // Call `onAdd` with the status code
+        switch httpResp?.statusCode {
+        case 409?: // If we get a 409, save the token and try again
+            authorize(httpResp: httpResp)
+            setQueuePosition(transferId: transferId, queuePosition: queuePosition, info: info, onComplete: onComplete)
             return
         case 401?:
             return onComplete(TransmissionResponse.forbidden)

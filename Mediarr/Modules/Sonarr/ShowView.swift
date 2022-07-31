@@ -10,11 +10,8 @@ import Foundation
 
 struct ShowView: View {
     @State var show: Series
-    
     var body: some View {
         ZStack {
-//            AsyncImage(
-//                url: URL(string: show.images.first(where: {$0.coverType == "banner"})?.remoteUrl ?? show.images.first(where: {$0.coverType == "fanart"})?.remoteUrl ?? ""),
             AsyncImage(url: URL(string: show.images.first(where: {$0.coverType == "banner"})?.remoteUrl ?? show.images.first(where: {$0.coverType == "fanart"})?.remoteUrl ?? "")) { phase in
                 switch phase {
                 case .empty:
@@ -44,19 +41,6 @@ struct ShowView: View {
                         .foregroundColor(.red)
                 }
             }
-//                content: { image in
-//                    image.renderingMode(.original)
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .cornerRadius(8)
-//                        .opacity(0.2)
-//                        .overlay(ShowInformationView(show: show), alignment: .leading)
-//
-//                },
-//                placeholder: {
-//                    ProgressView()
-//                }
-//            )
         }
     }
 }
@@ -404,8 +388,88 @@ struct DetailShowInformationView: View {
     }
 }
 
-struct ShowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowView(show: previewSeries)
+struct MissingShowView: View {
+    @State var show: MissingRecord
+    
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: show.series.images.first(where: {$0.coverType == "banner"})?.url ?? "")) { phase in
+                switch phase {
+                case .empty:
+                    Rectangle()
+                        .frame(maxWidth: .infinity, idealHeight: 90, maxHeight: .infinity)
+                        .foregroundColor(.gray)
+                        .cornerRadius(8)
+                        .opacity(0.2)
+                        .overlay(MissingShowInformationView(show: show), alignment: .leading)
+                case .success(let image):
+                    image
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(8)
+                        .opacity(0.2)
+                        .overlay(MissingShowInformationView(show: show), alignment: .leading)
+                case .failure:
+                    Rectangle()
+                        .frame(maxWidth: .infinity, idealHeight: 90, maxHeight: .infinity)
+                        .foregroundColor(.gray)
+                        .cornerRadius(8)
+                        .opacity(0.2)
+                        .overlay(MissingShowInformationView(show: show), alignment: .leading)
+                @unknown default:
+                    Text("Unknown error. Please try again.")
+                        .foregroundColor(.red)
+                }
+            }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+struct MissingShowInformationView: View {
+    @State var show: MissingRecord
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            Image("Question Mark Poster")
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 45, height: 70)
+                .clipped()
+                .cornerRadius(8)
+                .overlay(
+                    AsyncImage(
+                        url: URL(string: show.series.images.first(where: {$0.coverType == "poster"})?.url ?? ""),
+                        content: { image in
+                            image.renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 45, height: 70)
+                                .clipped()
+                                .cornerRadius(8)
+                            
+                        },
+                        placeholder: {
+                            //
+                        }
+                    ))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(show.series.title)
+                    .font(.system(size: 16, weight: .medium, design: .default))
+                HStack{
+                    Text("Season \(show.seasonNumber)")
+                    Text("|")
+                    Text("Episode \(show.episodeNumber)")
+                }
+                Text(show.title)
+                    .font(.system(size: 12, weight: .light, design: .default))
+                    .italic()
+                Text(GetDateFromStringDate(date: show.airDate))
+                    .font(.system(size: 14, weight: .bold, design: .default))
+                    .foregroundColor(.blue)
+            }.padding(.vertical)
+        }
+        .padding(5)
     }
 }

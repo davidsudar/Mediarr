@@ -55,6 +55,8 @@ func GetDateFromStringDay(date: String?) -> Date {
     
 }
 
+
+
 func GetEpisodePercentage(onDisk: Int, episodeCount: Int) -> Int {
     var percentage = round((Double(onDisk) / Double(episodeCount)) * 100)
     if percentage.isNaN

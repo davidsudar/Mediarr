@@ -12,7 +12,7 @@ class SonarrViewModel: ObservableObject {
     @Published var upcoming = [Upcoming]()
     @Published var upcomingDict = [String: [Upcoming]]()
     @Published var searchResults = [SearchSeries]()
-    @Published var missing = [Missing]()
+    @Published var missing: Missing? = nil
     @Published var isSearching = false
     @Published var rootFolders = [RootFolder]()
     @Published var qualityProfiles = [QualityProfile]()
@@ -177,7 +177,7 @@ class SonarrViewModel: ObservableObject {
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
             do {
-                let rss = try JSONDecoder().decode([Missing].self, from: data)
+                let rss = try JSONDecoder().decode(Missing.self, from: data)
                 DispatchQueue.main.async{
                     self.missing = rss
                 }
@@ -198,9 +198,6 @@ class SonarrViewModel: ObservableObject {
         else {
             search = searchTerm
         }
-        
-        
-        
         guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/series/lookup?term=" + search + "&apikey=" + settings.sonarrApiKey) else { return }
         print(url)
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
@@ -217,5 +214,23 @@ class SonarrViewModel: ObservableObject {
         }.resume()
     }
     
+    @MainActor
+    func updateAll(with settings: SettingsStore) {
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/command/name=RefreshSeries&apikey=" + settings.sonarrApiKey) else { return }
+        print(url)
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            guard data != nil else { return }
+        }.resume()
+    }
+    
+    @MainActor
+    func searchMissing(with settings: SettingsStore, ids: [Int]) {
+        let formattedArray = (ids.map{String($0)}).joined(separator: ",")
+        guard let url = URL(string: "http://"+settings.sonarrHost+":"+String(settings.sonarrPort)+"/api/v3/command/name=EpisodeSearch&episodeIds=[" + formattedArray + "]&apikey=" + settings.sonarrApiKey) else { return }
+        print(url)
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            guard data != nil else { return }
+        }.resume()
+    }
 }
 

@@ -71,7 +71,7 @@ struct SearchSeries: Hashable, Decodable, Identifiable {
     let title, titleSlug: String
     let overview: String?
     let seasonCount, year, id, profileId:Int
-    let images: [SonarrSearchImage]
+    let images: [SonarrImageNoRemote]
     let seasons: [SonarrSearchSeason]
     
     enum CodingKeys: String, CodingKey {
@@ -83,7 +83,7 @@ struct SearchSeries: Hashable, Decodable, Identifiable {
     }
 }
 
-struct SonarrSearchImage: Decodable, Hashable, Encodable {
+struct SonarrImageNoRemote: Decodable, Hashable, Encodable {
     let coverType, url: String
 }
 
@@ -98,7 +98,7 @@ struct AddShowObject: Codable {
     let profileId, tvdbId, qualityProfileId, languageProfileId: Int
     let addOptions: AddOptions
     let seasonFolder, monitored: Bool
-    let images: [SonarrSearchImage]
+    let images: [SonarrImageNoRemote]
     
 }
 struct AddOptions: Codable {
@@ -119,20 +119,22 @@ struct EpisodeFile: Hashable, Decodable {
 
 struct UpcomingSeries: Hashable, Decodable {
     let title: String
-    let images: Array<SonarrSearchImage>
+    let images: Array<SonarrImageNoRemote>
 }
 
-struct Missing: Hashable, Decodable, Identifiable {
-    let id: Int
+struct Missing: Hashable, Decodable {
     let records: [MissingRecord]
 }
 struct MissingRecord: Hashable, Decodable {
-    let title: String
+    let title, airDate: String
     let series: MissingRecordSeries
+    let episodeNumber, seasonNumber, id: Int
 }
 
 struct MissingRecordSeries: Hashable, Decodable {
-    let title: String
+    let title, overview: String
+    let images: [SonarrImageNoRemote]
+    
 }
 
 enum MonitorEnum: Int, CaseIterable {
