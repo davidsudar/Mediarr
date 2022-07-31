@@ -18,8 +18,13 @@ class TransmissionViewModel: ObservableObject {
     @Published var sessionStats: TransmissionSessionStatsArguments? = nil
     @State var sortMode: transmissionSortModeViewModel = .percentDone
     @Published var isSearchingInitial = false
-    @State var isEditing = false
+    @Published public var isEditing = false
     
+    @MainActor
+    func setEditing(editing: Bool)
+    {
+        self.isEditing = editing
+    }
     
     @MainActor
     func getShows(with settings: SettingsStore) {
@@ -39,6 +44,8 @@ class TransmissionViewModel: ObservableObject {
                                     self.shows[row].percentDone = show.percentDone
                                     self.shows[row].downloadSpeed = show.downloadSpeed
                                     self.shows[row].downloadedEver = show.downloadedEver
+                                    self.shows[row].sizeWhenDone = show.sizeWhenDone
+                                    self.shows[row].status = show.status
                                     self.shows[row].leftUntilDone = show.leftUntilDone
                                 }
                             } else {

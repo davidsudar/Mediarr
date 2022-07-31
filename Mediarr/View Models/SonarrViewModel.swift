@@ -125,8 +125,8 @@ class SonarrViewModel: ObservableObject {
                     request.httpBody = jsonData
                     
                     let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                        print("-----> data: \(data)")
-                        print("-----> error: \(error)")
+                        print("-----> data: \(data!)")
+                        print("-----> error: \(error!)")
                         
                         guard let data = data, error == nil else {
                             print(error?.localizedDescription ?? "No data")
@@ -189,6 +189,7 @@ class SonarrViewModel: ObservableObject {
     
     @MainActor
     func searchShows(with settings: SettingsStore, searchTerm: String) {
+        self.isSearching = true
         //modify search term to fit api call
         var search = ""
         if !searchTerm.contains("tvdb") {
@@ -208,7 +209,7 @@ class SonarrViewModel: ObservableObject {
                 let rss = try JSONDecoder().decode([SearchSeries].self, from: data)
                 DispatchQueue.main.async{
                     self.searchResults = rss
-                    print(data)
+                    self.isSearching = false
                 }
             } catch {
                 print("Failed to decode: \(error)")

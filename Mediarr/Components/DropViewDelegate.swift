@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DropViewDelegate: DropDelegate {
-    @StateObject var vm = TransmissionViewModel()
+    @ObservedObject var vm = TransmissionViewModel()
     var currentItem: Torrent
     var items: Binding<[Torrent]>
     var draggingItem: Binding<Torrent?>

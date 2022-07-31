@@ -132,7 +132,7 @@
 				78461783287C5F4F00EF5D74 /* Models */,
 				78461764287C59AC00EF5D74 /* Components */,
 				78B146352893A298006DF219 /* Modules */,
-				7846176A287C5ED900EF5D74 /* Sonarr */,
+				7846176A287C5ED900EF5D74 /* Old Sonarr */,
 				78461759287C392B00EF5D74 /* Main */,
 				787362D62880569400ACA30C /* Global Functions.swift */,
 				78461791287C5FF800EF5D74 /* Extensions.swift */,
@@ -176,7 +176,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		7846176A287C5ED900EF5D74 /* Sonarr */ = {
+		7846176A287C5ED900EF5D74 /* Old Sonarr */ = {
 			isa = PBXGroup;
 			children = (
 				78461773287C5F2C00EF5D74 /* DetailedShowHomeView.swift */,
@@ -185,7 +185,7 @@
 				78461776287C5F2C00EF5D74 /* ShowDetails.swift */,
 				7846176D287C5F2C00EF5D74 /* SonarrTabBar.swift */,
 			);
-			path = Sonarr;
+			path = "Old Sonarr";
 			sourceTree = "<group>";
 		};
 		78461783287C5F4F00EF5D74 /* Models */ = {

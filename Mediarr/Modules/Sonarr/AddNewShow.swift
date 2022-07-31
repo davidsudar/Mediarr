@@ -68,22 +68,30 @@ struct AddNewShow: View {
             .onAppear(perform: {
                 vm.searchResults = [SearchSeries]()
             })
-            ScrollView {
+            if vm.isSearching {
+                ZStack{
+                    Color("Primary").ignoresSafeArea()
+                    LoadingAnimation()
+                }
+            }
+            else {
+                ScrollView {
                     LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 8, content: {
-                            ForEach(vm.searchResults, id: \.self) { show in
-                                SearchShowView(show: show)
-                                    .onTapGesture {                                    self.selectedShow = show
-                                    }
-                        
+                        ForEach(vm.searchResults, id: \.self) { show in
+                            SearchShowView(show: show)
+                                .onTapGesture {                                    self.selectedShow = show
+                                }
+                            
                             
                         }
-                    }).padding(.horizontal, 12)
-                    .sheet(item: $selectedShow) {
-                        AddNewShowDetailed(vm: vm, newShow: $0 as SearchSeries, seasonFolders: true).environmentObject(settings)
+                    }).padding()
+                        .sheet(item: $selectedShow) {
+                            AddNewShowDetailed(vm: vm, newShow: $0 as SearchSeries, seasonFolders: true).environmentObject(settings)
                             
-                    }
+                        }
+                }
+                .background(Color("Primary"))
             }
-            .background(Color("Primary"))
         }
     }
 }
